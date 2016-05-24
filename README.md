@@ -1,20 +1,24 @@
 > I do not own any of this, This is just an updated guide on how to install openALPR on a raspberry pi
+
 # links to all the github pages of the actual content owners
-[link](https://github.com/openalpr/openalpr)
-[link](https://github.com/tesseract-ocr/tesseract)
-[link](https://github.com/tesseract-ocr/tessdata)
-[link](https://github.com/Itseez/opencv)
-[link](https://github.com/DanBloomberg/leptonica)
+* [openALPR](https://github.com/openalpr/openalpr)
+
+* [tesseract](https://github.com/tesseract-ocr/tesseract)
+
+* [tessdata](https://github.com/tesseract-ocr/tessdata)
+
+* [openCV](https://github.com/Itseez/opencv)
+
+* [leptonica](https://github.com/DanBloomberg/leptonica)
+
 ##If you just imaged the Raspberry Pi:
     sudo apt-get update
 	sudo apt-get upgrade
 	sudo rpi-update
-
 	sudo raspi-config 
 	* enable camera
 	* enable ssh (if its not already enabled)
 	* expand file system (you might have to do the steps before this, then reboot, then expand file system, then hit ok and it wil reboot again)
-/*********************************************************/
 ---
 ## Install Dependencies: (I believe these are all current and up to date)
 	sudo apt-get install autoconf automake libtool
@@ -29,7 +33,6 @@
 	sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
 	sudo apt-get install libatlas-base-dev gfortran
 ---
-/**********************************************************/
 ## this method will put everything opencv/alpr related into one folder:
 	cd ~
 	wget https://github.com/openalpr/openalpr/archive/master.zip
@@ -46,15 +49,12 @@
 	sudo wget http://www.leptonica.com/source/leptonica-1.73.tar.gz
 	(leptonica library)
 ---
-/***********************************************************/
 ## now unzip all master.zip files:
 	sudo unzip master.zip
 	sudo unzip master.zip.1
 	sudo unzip master.zip.2
 	sudo tar –xvf leptonica-1.73.tar.gz
 ---
-
-/*************************************************************/
 ## compile leptonica:
 	cd leptonica-1.73
 	sudo ./configure
@@ -103,7 +103,6 @@
 	sudo make install
 	sudo ldconfig
 ---
-/*************************************************************/
 
 ## time to test the library:
 	cd ~
